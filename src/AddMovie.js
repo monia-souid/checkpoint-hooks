@@ -43,6 +43,13 @@ function handleChange (e){
                 <Modal.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
+                        
+                        <Form.Label>Image</Form.Label>
+                        <Form.Control onChange ={handleChange} name = "image"type="text" placeholder="URL Image" />
+
+                    </Form.Group>
+                        <Form.Group controlId="formBasicEmail">
+                        
                             <Form.Label>Title of movie</Form.Label>
                             <Form.Control onChange ={handleChange} name = "title"type="text" placeholder="title movie" />
 

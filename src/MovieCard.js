@@ -8,8 +8,8 @@ import StarRatingComponent from 'react-star-rating-component';
 const MovieCard = ({ movie }) => {
     return (
         <div >
-                <Card style={{ width: '15rem' }} >
-                    <Card.Img variant="top" src={movie.image} />
+                <Card style={{ width: '18rem' }} >
+                    <Card.Img variant="top" src={movie.image} width ='100' height ='300' />
                     <Card.Body>
                         <Card.Title>{movie.title}</Card.Title>
                         <Card.Text>

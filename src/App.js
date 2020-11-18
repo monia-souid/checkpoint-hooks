@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import './App.css';
-import './index.css'
 import MovieList from './MovieList';
 import Recherche from './recherche';
 import AddMovie from './AddMovie';
@@ -9,14 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  const [movie,setMovie]= useState(
-    {
-      image: null,
-      title: "",
-      description: "",
-      rate: 0,
-    },
-  )
+ 
   const [filter, setFilter] = useState({
     text: '', star: 0
   })
@@ -51,16 +43,21 @@ function App() {
   return (
     <div className="App">
       <h1>Movies</h1>
+      <div className= "container">
+        <Recherche setFilter={setFilter} filter={filter} />
+      <AddMovie addFilm={setMovies} films={movies}/>
+      </div>
+      
       <MovieList movies={movies.filter((e) => 
 
         (e.title.toLowerCase().includes(filter.text.toLowerCase())) && e.rate >= filter.star
          
 
       )} />
-      <Recherche setFilter={setFilter} filter={filter} />
+      
       {console.log(filter)}
-      <AddMovie addFilm={setMovies} films={movies}/>
-{console.log(movie)}
+      
+      
     </div>
 
   );
